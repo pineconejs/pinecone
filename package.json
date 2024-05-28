@@ -14,5 +14,5 @@
     "@nuxt/ui": "^2.13.0",
     "nuxt": "^3.10.1"
   },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  "packageManager": "yarn@4.2.2"
 }
