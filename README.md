@@ -1,75 +1,41 @@
-# Nuxt UI Minimal Starter
+# 松果应用
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+本项目基于[Nuxt](https://nuxt.com/)开发。开始之前，请详细阅读[Nuxt文档](https://nuxt.com/docs/getting-started/introduction)。
 
-## Setup
+## 快速开始
 
-Make sure to install the dependencies:
+开始开发前，请先确定你已经安装了[Node.js](https://nodejs.org/en)18及以上开发环境。
+
+推荐使用[VSCode](https://code.visualstudio.com/)开发，请安装[Prettier插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)格式化代码。
+
+本项目使用[yarn](https://yarnpkg.com/)作为包管理工具，推荐使用`yarn`命令执行操作。
+
+### 安装依赖
+
+执行下面的命令安装依赖：
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## 开发服务器
 
-Start the development server on `http://localhost:3000`:
+执行下面的命令启动开发服务器，服务将运行在 `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## 构建部署
 
-Build the application for production:
+执行下面的命令构建产物以部署:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
 yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+执行下面的命令预览本地构建的产物:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
 yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
