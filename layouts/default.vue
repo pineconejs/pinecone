@@ -1,0 +1,53 @@
+<script setup lang="ts">
+const colorMode = useColorMode()
+
+const headerLinks = computed(() => (
+  [
+    [{
+      icon: "i-heroicons-sparkles",
+      label: "Logo",
+    }],
+    [{
+      icon: "i-heroicons-magnifying-glass",
+      label: "search",
+    },
+    {
+      icon: { light: "i-heroicons-sun", dark: "i-heroicons-moon" }[colorMode.value],
+      label: colorMode.value === "light" ? "Light" : "Dark",
+      click: () => { colorMode.preference = (colorMode.value === "light" ? "dark" : "light") },
+    },
+    {
+      label: "Avatar",
+      avatar: {
+        src: "https://avatars.githubusercontent.com/u/739984?v=4",
+      },
+    }],
+  ]
+))
+
+const asideLinks = [
+  { icon: "i-heroicons-home", label: "概览", to: "/" },
+  { icon: "i-heroicons-circle-stack", label: "数据建模", to: "/schema" },
+  { icon: "i-heroicons-table-cells", label: "表单设计", to: "/form" },
+  { icon: "i-heroicons-puzzle-piece", label: "业务逻辑", to: "/function" },
+  { icon: "i-heroicons-rectangle-group", label: "业务流程", to: "process" },
+]
+</script>
+
+<template>
+  <div class="w-screen h-screen flex flex-col">
+    <UHorizontalNavigation
+      class="w-full flex-0 px-2 border-b border-gray-200 dark:border-gray-800"
+      :links="headerLinks"
+    />
+    <div class="w-full h-full flex-1 flex">
+      <UVerticalNavigation
+        class="h-full px-2 border-r border-gray-200 dark:border-gray-800"
+        :links="asideLinks"
+      />
+      <div class="p-2">
+        <slot />
+      </div>
+    </div>
+  </div>
+</template>
