@@ -1,3 +1,5 @@
 <template>
-  <div>数据建模</div>
+  <div>
+    <SchemaEditor />
+  </div>
 </template>

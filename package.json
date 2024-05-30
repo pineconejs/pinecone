@@ -21,10 +21,16 @@
     "lint-staged": "^15.2.5",
     "nuxt": "^3.10.1",
     "typescript": "^5.4.5",
-    "vue-tsc": "^1"
+    "vue-tsc": "^1",
+    "vuetify-nuxt-module": "^0.14.1"
   },
   "packageManager": "yarn@4.2.2",
   "lint-staged": {
     "**/*": "eslint --fix"
+  },
+  "dependencies": {
+    "@jsonforms/core": "^3.3.0",
+    "@jsonforms/vue": "^3.3.0",
+    "@jsonforms/vue-vuetify": "^3.1.0-preview.0"
   }
 }
