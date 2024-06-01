@@ -940,20 +940,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsonforms/vue-vuetify@npm:^3.1.0-preview.0":
-  version: 3.1.0-preview.0
-  resolution: "@jsonforms/vue-vuetify@npm:3.1.0-preview.0"
+"@jsonforms/vue-vuetify@npm:^3.3.0-preview.0":
+  version: 3.3.0-preview.0
+  resolution: "@jsonforms/vue-vuetify@npm:3.3.0-preview.0"
   dependencies:
     ajv: "npm:^8.6.1"
     dayjs: "npm:^1.10.6"
     lodash: "npm:^4.17.15"
   peerDependencies:
-    "@jsonforms/core": 3.1.0
-    "@jsonforms/vue": 3.1.0
+    "@jsonforms/core": 3.3.0
+    "@jsonforms/vue": 3.3.0
     "@mdi/font": ^7.0.96
     vue: ^3.2.47
     vuetify: ^3.1.12
-  checksum: 10c0/24f0b36599889b822afc6b722e13384825c9ed972f071dad9c5406593728676ff8531ed0613ccf40f1b86e3f15972a90c03f9de5750f411ade5e5fbb07104e58
+  checksum: 10c0/e401e43912e7675b69507f61aff15aa0ed3f168824d2ee53192bf392656c3d96a5ba72e89245ce6165a6ce65b37ee6b81026e2c8eef1b37d1330a99cada7898c
   languageName: node
   linkType: hard
 
@@ -1014,6 +1014,13 @@ __metadata:
   bin:
     node-pre-gyp: bin/node-pre-gyp
   checksum: 10c0/2b24b93c31beca1c91336fa3b3769fda98e202fb7f9771f0f4062588d36dcc30fcf8118c36aa747fa7f7610d8cf601872bdaaf62ce7822bb08b545d1bbe086cc
+  languageName: node
+  linkType: hard
+
+"@mdi/font@npm:^7.4.47":
+  version: 7.4.47
+  resolution: "@mdi/font@npm:7.4.47"
+  checksum: 10c0/4cd44a9e9c40218f00d2500f7408f913ac276348054c9c1b0108330060fecb3cb58c8c08eda39a7535298aaf3f1d28c0c115751cfe9fc2c9cdb9d50450107db9
   languageName: node
   linkType: hard
 
@@ -1338,7 +1345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.11.2, @nuxt/kit@npm:^3.11.1, @nuxt/kit@npm:^3.11.2, @nuxt/kit@npm:^3.9.0":
+"@nuxt/kit@npm:3.11.2, @nuxt/kit@npm:^3.11.1, @nuxt/kit@npm:^3.11.2":
   version: 3.11.2
   resolution: "@nuxt/kit@npm:3.11.2"
   dependencies:
@@ -4215,7 +4222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4, debug@npm:~4.3.4":
+"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4, debug@npm:~4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -4233,6 +4240,18 @@ __metadata:
   dependencies:
     ms: "npm:^2.1.1"
   checksum: 10c0/37d96ae42cbc71c14844d2ae3ba55adf462ec89fd3a999459dec3833944cd999af6007ff29c780f1c61153bcaaf2c842d1e4ce1ec621e4fc4923244942e4a02a
+  languageName: node
+  linkType: hard
+
+"debug@npm:^4.3.3":
+  version: 4.3.5
+  resolution: "debug@npm:4.3.5"
+  dependencies:
+    ms: "npm:2.1.2"
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 10c0/082c375a2bdc4f4469c99f325ff458adad62a3fc2c482d59923c260cb08152f34e2659f72b3767db8bb2f21ca81a60a42d1019605a412132d7b9f59363a005cc
   languageName: node
   linkType: hard
 
@@ -7527,7 +7546,8 @@ __metadata:
   dependencies:
     "@jsonforms/core": "npm:^3.3.0"
     "@jsonforms/vue": "npm:^3.3.0"
-    "@jsonforms/vue-vuetify": "npm:^3.1.0-preview.0"
+    "@jsonforms/vue-vuetify": "npm:^3.3.0-preview.0"
+    "@mdi/font": "npm:^7.4.47"
     "@nuxt/devtools": "npm:latest"
     "@nuxt/eslint": "npm:^0.3.13"
     "@nuxt/ui": "npm:^2.13.0"
@@ -7536,8 +7556,9 @@ __metadata:
     lint-staged: "npm:^15.2.5"
     nuxt: "npm:^3.10.1"
     typescript: "npm:^5.4.5"
+    vite-plugin-vuetify: "npm:^2.0.3"
     vue-tsc: "npm:^1"
-    vuetify-nuxt-module: "npm:^0.14.1"
+    vuetify: "npm:^3.1.12"
   languageName: unknown
   linkType: soft
 
@@ -9993,17 +10014,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unconfig@npm:^0.3.11":
-  version: 0.3.13
-  resolution: "unconfig@npm:0.3.13"
-  dependencies:
-    "@antfu/utils": "npm:^0.7.7"
-    defu: "npm:^6.1.4"
-    jiti: "npm:^1.21.0"
-  checksum: 10c0/894bbaff814053b09dbde85639ba38d2ff6bd27c098302897f2cf58f3960d4135a8945b79709fcf3599dc9b72599e87dbef3f3fd1871acd1077cb03adef2b0da
-  languageName: node
-  linkType: hard
-
 "uncrypto@npm:^0.1.3":
   version: 0.1.3
   resolution: "uncrypto@npm:0.1.3"
@@ -10697,25 +10707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify-nuxt-module@npm:^0.14.1":
-  version: 0.14.1
-  resolution: "vuetify-nuxt-module@npm:0.14.1"
-  dependencies:
-    "@nuxt/kit": "npm:^3.9.0"
-    defu: "npm:^6.1.4"
-    destr: "npm:^2.0.3"
-    local-pkg: "npm:^0.5.0"
-    pathe: "npm:^1.1.2"
-    perfect-debounce: "npm:^1.0.0"
-    ufo: "npm:^1.5.3"
-    unconfig: "npm:^0.3.11"
-    vite-plugin-vuetify: "npm:^2.0.3"
-    vuetify: "npm:^3.6.5"
-  checksum: 10c0/358ba5a7205e466b09c5469c3ee8003aa2b271c6a67b9c66a08036c8be2fb38d05b2c8725d65e7f50721943c31314046a353e6b22c3d02248f710dad2f0b82e1
-  languageName: node
-  linkType: hard
-
-"vuetify@npm:^3.6.5":
+"vuetify@npm:^3.1.12":
   version: 3.6.8
   resolution: "vuetify@npm:3.6.8"
   peerDependencies:

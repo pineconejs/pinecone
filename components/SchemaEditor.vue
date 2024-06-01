@@ -97,6 +97,7 @@ const renderers = markRaw([
 ])
 
 function onChange(event: JsonFormsChangeEvent) {
+  console.debug("On Change Event: ", event)
   data.value = event.data
 }
 </script>
