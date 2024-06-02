@@ -1,5 +1,7 @@
 <template>
   <div>
-    <SchemaEditor />
+    <ClientOnly>
+      <SchemaEditor />
+    </ClientOnly>
   </div>
 </template>

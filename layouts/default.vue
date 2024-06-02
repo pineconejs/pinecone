@@ -42,10 +42,10 @@ const asideLinks = [
     />
     <div class="w-full h-full flex-1 flex">
       <UVerticalNavigation
-        class="h-full px-2 border-r border-gray-200 dark:border-gray-800"
+        class="h-full flex-0 px-2 border-r border-gray-200 dark:border-gray-800"
         :links="asideLinks"
       />
-      <div class="p-2">
+      <div class="flex-1 p-2">
         <slot />
       </div>
     </div>
