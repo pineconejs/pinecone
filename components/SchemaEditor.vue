@@ -16,6 +16,7 @@ interface SchemaDefination {
   exclusiveMinimum?: boolean
   maximumn?: number
   exclusiveMaximum?: boolean
+  prefixItems?: SchemaDefination
   properties?: SchemaDefination[]
 }
 
@@ -114,6 +115,11 @@ const schema: JsonSchema7 = {
   ...baseSchema,
   properties: {
     ...baseSchema.properties,
+    prefixItems: {
+      type: "array",
+      title: "成员",
+      items: baseSchema,
+    },
     properties: {
       type: "array",
       title: "成员",
@@ -201,6 +207,24 @@ const uischema = {
   ...baseUISchema,
   elements: [
     ...baseUISchema.elements,
+    {
+      type: "Control",
+      scope: "#/properties/prefixItems",
+      options: {
+        detail: baseUISchema,
+        elementLabelProp: "name",
+        showSortButtons: true,
+      },
+      rule: {
+        effect: "SHOW",
+        condition: {
+          scope: "#/properties/type",
+          schema: {
+            const: "array",
+          },
+        },
+      },
+    } as ControlElement,
     {
       type: "Control",
       scope: "#/properties/properties",
