@@ -5101,7 +5101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1, fast-glob@npm:^3.3.2":
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1, fast-glob@npm:^3.3.2":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -7100,6 +7100,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"monaco-editor@npm:^0.49.0":
+  version: 0.49.0
+  resolution: "monaco-editor@npm:0.49.0"
+  checksum: 10c0/c62d19e65f8ad441d0b29d8f43181c730bd373854ff0f9331c42ed1b97b729ab099e6f961c2e377acddda6923b8030e0453ae87edd3f7db3ace75c91f44431cd
+  languageName: node
+  linkType: hard
+
 "mri@npm:^1.2.0":
   version: 1.2.0
   resolution: "mri@npm:1.2.0"
@@ -7554,7 +7561,9 @@ __metadata:
     eslint: "npm:^9.3.0"
     husky: "npm:^9.0.11"
     lint-staged: "npm:^15.2.5"
+    monaco-editor: "npm:^0.49.0"
     nuxt: "npm:^3.10.1"
+    nuxt-monaco-editor: "npm:^1.2.9"
     typescript: "npm:^5.4.5"
     vite-plugin-vuetify: "npm:^2.0.3"
     vue-tsc: "npm:^1"
@@ -7571,6 +7580,19 @@ __metadata:
     "@nuxt/devtools-kit": "npm:^1.1.1"
     "@nuxt/kit": "npm:^3.11.1"
   checksum: 10c0/948be6855be13f687c027943668af8d0aa804803d5add768a5dbbd3296fa49eba0185a2e0049c24fd0a8903632e25703de8d7f78c8326678bc21a059edada7b0
+  languageName: node
+  linkType: hard
+
+"nuxt-monaco-editor@npm:^1.2.9":
+  version: 1.2.9
+  resolution: "nuxt-monaco-editor@npm:1.2.9"
+  dependencies:
+    "@nuxt/kit": "npm:^3.11.2"
+    defu: "npm:^6.1.4"
+    vite-plugin-static-copy: "npm:^1.0.3"
+  peerDependencies:
+    monaco-editor: "*"
+  checksum: 10c0/cb671489e4401b0e6e649185b6121904e6aeb96d8d390e1e76e28473358313eca9006806427b05f980f2511ef4a3f75c37b4a351fb0ef4c619d00c9e2b6ce69c
   languageName: node
   linkType: hard
 
@@ -10436,6 +10458,20 @@ __metadata:
     "@nuxt/kit":
       optional: true
   checksum: 10c0/cd9924bdf24989f61317a9400e622ab3db574a807aaae8412815558211a572b71c0988f5110bf03eecda718e286786d8c848756322e2e9b1eebc673515f34cec
+  languageName: node
+  linkType: hard
+
+"vite-plugin-static-copy@npm:^1.0.3":
+  version: 1.0.5
+  resolution: "vite-plugin-static-copy@npm:1.0.5"
+  dependencies:
+    chokidar: "npm:^3.5.3"
+    fast-glob: "npm:^3.2.11"
+    fs-extra: "npm:^11.1.0"
+    picocolors: "npm:^1.0.0"
+  peerDependencies:
+    vite: ^5.0.0
+  checksum: 10c0/b11c6a0bd31b8592af4099f75122b2073738659d1d06c6aeedd47d15b84758a57c17d56b6e79cefa3b7871c8f51980b423a9d524bbceb4b17363d4363e78a63b
   languageName: node
   linkType: hard
 

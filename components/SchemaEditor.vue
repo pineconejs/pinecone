@@ -20,10 +20,7 @@ interface SchemaDefination {
   properties?: SchemaDefination[]
 }
 
-const defination = ref<SchemaDefination>({
-  name: "",
-  type: "string",
-})
+const model = defineModel<SchemaDefination>({ type: Object, default: { name: "", type: "string" } })
 
 const baseSchema: JsonSchema7 = {
   type: "object",
@@ -256,13 +253,13 @@ function onChange(event: JsonFormsChangeEvent) {
   }
 
   console.debug("On Change data: ", event.data)
-  defination.value = event.data
+  model.value = event.data
 }
 </script>
 
 <template>
   <JsonForms
-    :data="defination"
+    :data="model"
     :renderers="renderers"
     :schema="schema"
     :uischema="uischema"

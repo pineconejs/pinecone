@@ -4,12 +4,17 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify"
 export default defineNuxtConfig({
   devtools: { enabled: true },
   build: { transpile: ["vuetify"] },
-  modules: ["@nuxt/ui", "@nuxt/eslint", (_options, nuxt) => {
-    nuxt.hooks.hook("vite:extendConfig", (config) => {
+  modules: [
+    "@nuxt/ui",
+    "@nuxt/eslint",
+    "nuxt-monaco-editor",
+    (_options, nuxt) => {
+      nuxt.hooks.hook("vite:extendConfig", (config) => {
       // @ts-expect-error 忽略config的类型
-      config.plugins.push(vuetify({ autoImport: true }))
-    })
-  }],
+        config.plugins.push(vuetify({ autoImport: false }))
+      })
+    },
+  ],
   vite: {
     vue: {
       template: {
