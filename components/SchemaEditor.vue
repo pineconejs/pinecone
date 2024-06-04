@@ -4,28 +4,13 @@ import type { JsonFormsChangeEvent } from "@jsonforms/vue"
 import { JsonForms } from "@jsonforms/vue"
 import { vuetifyRenderers } from "@jsonforms/vue-vuetify"
 
-interface SchemaDefination {
-  name: string
-  description?: string
-  type: string
-  minLength?: number
-  maxLength?: number
-  format?: string
-  pattern?: string
-  minimum?: number
-  exclusiveMinimum?: boolean
-  maximumn?: number
-  exclusiveMaximum?: boolean
-  prefixItems?: SchemaDefination
-  properties?: SchemaDefination[]
-}
+const model = defineModel<JsonSchema7>({ type: Object, default: {} })
 
-const model = defineModel<SchemaDefination>({ type: Object, default: { name: "", type: "string" } })
-
-const baseSchema: JsonSchema7 = {
+const schema: JsonSchema7 = {
+  $id: "/meta/core",
   type: "object",
   properties: {
-    name: {
+    title: {
       type: "string",
       title: "名称",
       description: "使用简短的名称命名该数据模型",
@@ -104,28 +89,21 @@ const baseSchema: JsonSchema7 = {
       title: "排除最大值",
       description: "控制数字类型的范围是否排除最大值",
     },
-  },
-  required: ["name", "type"],
-}
-
-const schema: JsonSchema7 = {
-  ...baseSchema,
-  properties: {
-    ...baseSchema.properties,
     prefixItems: {
       type: "array",
       title: "成员",
-      items: baseSchema,
+      items: { $ref: "#" },
     },
     properties: {
       type: "array",
       title: "成员",
-      items: baseSchema,
+      items: { $ref: "#" },
     },
   },
+  required: ["title", "type"],
 }
 
-const baseUISchema: VerticalLayout = {
+const uischema: VerticalLayout = {
   type: "VerticalLayout",
   elements: [
     {
@@ -134,7 +112,7 @@ const baseUISchema: VerticalLayout = {
       elements: [
         {
           type: "Control",
-          scope: "#/properties/name",
+          scope: "#/properties/title",
         },
         {
           type: "Control",
@@ -197,19 +175,11 @@ const baseUISchema: VerticalLayout = {
         },
       },
     } as GroupLayout,
-  ],
-}
-
-const uischema = {
-  ...baseUISchema,
-  elements: [
-    ...baseUISchema.elements,
     {
       type: "Control",
       scope: "#/properties/prefixItems",
       options: {
-        detail: baseUISchema,
-        elementLabelProp: "name",
+        elementLabelProp: "title",
         showSortButtons: true,
       },
       rule: {
@@ -226,8 +196,7 @@ const uischema = {
       type: "Control",
       scope: "#/properties/properties",
       options: {
-        detail: baseUISchema,
-        elementLabelProp: "name",
+        elementLabelProp: "title",
         showSortButtons: true,
       },
       rule: {
@@ -249,7 +218,7 @@ const renderers = markRaw([
 
 function onChange(event: JsonFormsChangeEvent) {
   if (event.errors) {
-    console.error("onChange erros:", event.errors)
+    console.debug("onChange erros:", event.errors)
   }
 
   console.debug("On Change data: ", event.data)
