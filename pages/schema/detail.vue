@@ -24,7 +24,7 @@ const code = computed<string>({
     schema.value = JSON.parse(value)
   },
 })
-const items = [
+const tabs = [
   {
     key: "visual-editor",
     slot: "visual",
@@ -43,7 +43,7 @@ const items = [
 <template>
   <UTabs
     class="w-full"
-    :items="items"
+    :items="tabs"
   >
     <template #visual>
       <ClientOnly>
