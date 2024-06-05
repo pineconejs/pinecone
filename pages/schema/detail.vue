@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import type { JsonSchema7 } from "@jsonforms/core"
 
+definePageMeta({
+  links: [
+    { label: "数据模型", to: "/schema/list" },
+    { label: "详情", to: "/schema/detail" },
+  ],
+})
+
 const colorMode = useColorMode()
 
 const theme = computed(() => {

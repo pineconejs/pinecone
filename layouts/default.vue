@@ -27,11 +27,21 @@ const headerLinks = computed(() => (
 
 const asideLinks = [
   { icon: "i-heroicons-home", label: "概览", to: "/" },
-  { icon: "i-heroicons-circle-stack", label: "数据建模", to: "/schema" },
+  { icon: "i-heroicons-circle-stack", label: "数据建模", to: "/schema/list" },
   { icon: "i-heroicons-table-cells", label: "表单设计", to: "/form" },
   { icon: "i-heroicons-puzzle-piece", label: "业务逻辑", to: "/function" },
   { icon: "i-heroicons-rectangle-group", label: "业务流程", to: "process" },
 ]
+
+const route = useRoute()
+type BreadcrumbLink = { icon?: string, label: string, to: string }
+const links = computed<BreadcrumbLink[]>(() => {
+  return route?.meta?.links as BreadcrumbLink[] || route.matched.map(item => ({
+    icon: item?.meta?.icon,
+    label: item?.meta?.title || item.name || item.path,
+    to: item.path,
+  }))
+})
 </script>
 
 <template>
@@ -46,6 +56,10 @@ const asideLinks = [
         :links="asideLinks"
       />
       <div class="flex-1 p-2">
+        <UBreadcrumb
+          class="px-3 border-b border-gray-200 dark:border-gray-700"
+          :links="links"
+        />
         <slot />
       </div>
     </div>
